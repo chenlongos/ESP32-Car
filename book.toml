@@ -1,5 +1,5 @@
 [book]
-title = "飞腾派驱动开发指导书"
+title = "ESP32小车开发指导书"
 author = "opencamp 社区"
 language = "zh-CN"
 src = "src"
