@@ -6,6 +6,8 @@
   // 初始化代码，只执行一次}`
   <br>`void loop() {
   // 主循环代码，重复执行}`
+  <br>`Serial.begin(115200); // 初始化串口，波特率115200`
+  <br>`Serial.print()    // 发送数据到串口`
 - 二、相关库中核心函数的介绍
   * **LedController**
   <br>(1)**ledcSetup() - PWM通道初始化**
