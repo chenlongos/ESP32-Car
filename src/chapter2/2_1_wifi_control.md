@@ -30,5 +30,18 @@
     Serial.print(".");
   }
   Serial.println("\nIP地址: " + WiFi.localIP().toString());
-
-
+  ```
+- 四、代码示例
+```
+void Setup(){
+  Serial.begin(115200);
+  WiFi.mode(WIFI_STA);
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("\nIP地址: " + WiFi.localIP().toString());
+}
+void loop() {
+}

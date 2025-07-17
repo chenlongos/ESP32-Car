@@ -11,6 +11,26 @@
   <br>电机4 DIR: GPIO14
 ## 相关函数的编写
 - 电机控制函数
+  * 速度控制函数
+  <br>依照ledcWrite()函数相关功能进行编写
+  * 代码样例
+  ```
+  void Motor_Speed(int motorID, int speed) 
+  {  // 电机速度设置
+                                            // ID=1~4,speed=-255~255
+  if (speed == 0) {
+    ledcWrite(motorID * 2 - 2, 0);
+    ledcWrite(motorID * 2 - 1, 0);
+  } else if (speed > 0) {
+    ledcWrite(motorID * 2 - 2, speed);
+    ledcWrite(motorID * 2 - 1, 0);
+  } else {
+    ledcWrite(motorID * 2 - 2, 0);
+    ledcWrite(motorID * 2 - 1, -speed);
+  }
+  }
+  //其中motorID * 2 - 2对应的是PWM通道，设置为从0开始
+  ```
 ## 串口调试与烧录
 - 一、调试方法
   * PlatformIO提供了方便的串口监视器：
@@ -26,3 +46,5 @@
   * 3.**电机响应异常**：
   <br>检查电源是否充足
   <br>检查PWM频率和分辨率
+
+## 预期实现成果展示

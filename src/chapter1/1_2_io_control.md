@@ -20,3 +20,47 @@
   <br>引脚悬空时默认读取为低电平
   <br>适合连接接电源式开关/按键
   <br>可节省外部下拉电阻
+## Arduino框架
+- 一、必要头函数/库
+  * 1.Arduino
+  <br>核心库，包括GPIO基础函数
+  * 2.LedConctroller
+  <br>将控制GPIO的基础函数替换，如下
+  ```
+  //Aruino
+  pinMode(pin, mode);  // 配置引脚为输入或输出模式
+  digitalWrite(pin, value);  // 设置输出电平（HIGH/LOW）
+  ```
+  ```
+  //LedController
+  //介绍详见上一章
+  ledcSetup(uint8_t chan, double freq, uint8_t bit_num);
+  ledcAttachPin(uint8_t pin, uint8_t chan);
+  edcWrite(uint8_t chan, uint32_t duty);
+  ```
+- 二、代码样例
+```
+#include <Arduino.h>
+void Motor_Setup(int motorID, int pin1,
+                 int pin2) {  // 电机初始化 ID=1~4 定义四组电机
+  ledcSetup(motorID * 2 - 2, freq, resolution_bits);
+  ledcAttachPin(pin1, motorID * 2 - 2);
+  ledcSetup(motorID * 2 - 1, freq, resolution_bits);
+  ledcAttachPin(pin2, motorID * 2 - 1);
+}
+void setup() {
+  delay(500);
+  Serial.begin(115200);
+  
+  Motor_Setup(1, 27, 13); // 设电机组标号和对应的引脚
+  Motor_Setup(2, 4, 2);
+  Motor_Setup(3, 17, 12);
+  Motor_Setup(4, 15, 14);
+}
+
+
+void loop() {
+  delay(1000);
+}
+```
+

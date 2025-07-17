@@ -9,3 +9,14 @@
   request->send(200);});
 * 通过以下方法对应控制运动相关函数：
   <br>`request->getParam("state")->value()`
+* 代码样例
+```
+const char* webpage = "";//自己编写的网页
+AsyncWebServer server(80);
+const char* ssid = "Tsinghua-Dongsheng";
+const char* password = "";
+void notFound(AsyncWebServerRequest *request) {
+    request->send(404, "text/plain", "Not found");
+}
+```
+## 预期实现成果
