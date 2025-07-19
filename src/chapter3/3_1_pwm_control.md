@@ -11,3 +11,14 @@
 - 三、对多个电机进行控制，实现对抓手运动状态控制
   * 利用switch结构改写上述角度函数
   * 根据舵机实际情况，编写能实现抓手初始状态、抓物状态、缩回状态、释放状态等的各种函数
+- 四、代码样例
+```
+void Servo_Setup(){
+  ledcSetup(PWM_CHANNEL_1, PWM_FREQ, PWM_RESOLUTION);
+  ledcAttachPin(SERVO_PIN_1, PWM_CHANNEL_1);
+  ledcSetup(PWM_CHANNEL_2, PWM_FREQ, PWM_RESOLUTION);
+  ledcAttachPin(SERVO_PIN_2, PWM_CHANNEL_2);
+  ledcSetup(PWM_CHANNEL_3, PWM_FREQ, PWM_RESOLUTION);
+  ledcAttachPin(SERVO_PIN_3, PWM_CHANNEL_3);
+}
+(角度方面的代码还需要完善)
