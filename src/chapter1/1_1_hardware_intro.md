@@ -1,5 +1,6 @@
 # 硬件介绍
 ## ESP32核心引脚
+![ESP32-WROOM-32E引脚图](https://i-blog.csdnimg.cn/blog_migrate/8fb83df5a134720e35fa81769347042d.png)
 - 一、电源管理引脚
   * 1.VCC​​：3.3V电源输入端子，为整个芯片提供工作电压
   * 2.​GND​​：接地端子，与电源负极相连

@@ -1,5 +1,6 @@
 # ESP32使用I/O接口
 ## 数字I/O的不同工作模式介绍
+![ESP32管脚图](https://i-blog.csdnimg.cn/blog_migrate/b5e5d7d537c60a57956b11f2739ec9c2.png)
 - 一、基本输入输出模式
   * 1.数字输入模式(INPUT)
   <br>用于读取外部数字信号状态(高/低电平)

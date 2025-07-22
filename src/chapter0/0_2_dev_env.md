@@ -4,7 +4,7 @@
 
 基础运行环境可以参考如下网址 使用VSCode+PlatformIO插件搭建开发环境
 
-## 1.2.2 相关库的下载与介绍
+## 0.2.2 相关库的下载与介绍
 
 
 - 一、ESPAsyncWebServer

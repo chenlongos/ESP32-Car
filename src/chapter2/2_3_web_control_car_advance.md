@@ -20,3 +20,6 @@ void notFound(AsyncWebServerRequest *request) {
 }
 ```
 ## 预期实现成果
+<video width="600" height="600" controls>
+  <source src="../resource/img/up_server.mp4" type="video/mp4">
+</video>

@@ -48,3 +48,6 @@
   <br>检查PWM频率和分辨率
 
 ## 预期实现成果展示
+<video width="600" height="600" controls>
+  <source src="../resource/img/up_motorcontrol.mp4" type="video/mp4">
+</video>

@@ -3,3 +3,6 @@
 - 差速转向
 - 刹车与休眠的区别
 ## 预期实现成果
+<video width="600" height="600" controls>
+  <source src="../resource/img/turn.mp4" type="video/mp4">
+</video>
