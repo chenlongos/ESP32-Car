@@ -16,8 +16,7 @@
   * 代码样例
   ```
   void Motor_Speed(int motorID, int speed) 
-  {  // 电机速度设置
-                                            // ID=1~4,speed=-255~255
+  {  // 电机速度设置 // ID=1~4,speed=-255~255
   if (speed == 0) {
     ledcWrite(motorID * 2 - 2, 0);
     ledcWrite(motorID * 2 - 1, 0);

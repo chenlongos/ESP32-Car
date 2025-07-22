@@ -2,8 +2,9 @@
 
 ## 0.2.1 运行环境
 
-基础运行环境可以参考如下网址 使用VSCode+PlatformIO插件搭建开发环境
-
+基础运行环境可以参考如下网址 使用VSCode+PlatformIO插件搭建开发环境：
+https://blog.csdn.net/msdcp/article/details/127033151
+https://blog.csdn.net/jiladahe1997/article/details/108270620
 ## 0.2.2 相关库的下载与介绍
 
 
