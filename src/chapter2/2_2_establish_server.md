@@ -29,3 +29,4 @@ const char* webpage = "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charset=\
   <br>原始代码中包含换行符（\n）和缩进，会增加字符串长度，可能超出ESP32的存储限制（尤其是Flash或NVS分区容量）。
   <br>换行符在不同系统中可能为\n（Unix）或\r\n（Windows），需统一处理。
 ## 预期实现成果
+![](../resource/img/2.2server.png)

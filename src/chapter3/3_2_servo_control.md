@@ -11,3 +11,10 @@
   <br>`angle = (pulseWidth_us - 500) × (180 / (2500 - 500))`
 * 由上述两个公式即可推导出角度和分辨率之间的关系
 - 三、代码样例
+```
+void setAngle(int servoNum, int angle) {
+  angle = constrain(angle, 0, 180); // 限制角度范围
+  float pulseWidth = 500 + angle * (2000.0 / 180.0); // 精确到11.111μs/°// 绝对值映射
+  uint32_t duty = (uint32_t)((pulseWidth / 20000.0) * 65535 + 0.5); // 四舍五入
+  ledcWrite(servoNum, duty);
+}
