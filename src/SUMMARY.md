@@ -44,3 +44,8 @@
 - [第九章：项目实践-通过语音交互实现捡万物](chapter9/chapter_09.md)
 
 - [第十章：项目实践-通过语音交互实现分类存放](chapter10/chapter_10.md)
+
+- [第十一章：mixly下对ESP32控制的复现](chapter11/chapter_11.md)
+  * [mixly安装](chapter11/11_1_mixly_install.md)
+  * [mixly界面简单介绍](chapter11/11_2_mixly_intro.md)
+  * [mixly下代码的复现](chapter11/11_3_mixly_code.md)
