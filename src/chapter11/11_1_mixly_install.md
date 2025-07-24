@@ -1,24 +1,24 @@
-# 第一章：ESP32小车基本控制
+# Mixly安装与使用
 
-## 目录
-- [硬件介绍](1_1_hardware_intro.md)
-  * 1.1.1 ESP32核心引脚
-  * 1.1.2 ESP32开发板的基本功能
-- [ESP32使用I/O接口](1_2_io_control.md)
-  * 1.2.1 数字I/O的不同工作模式介绍
-  * 1.2.2 Arduino框架
-- [ESP32驱动轮子](1_3_motor_control.md)
-  * 1.3.1 硬件连接
-  <br>(a)引脚连接参考
-  * 1.3.1 相关函数的编写
-  <br>(a)电机控制函数
-  * 1.3.2 串口连接与烧录
-  <br>(a)调试方法
-  <br>(b)常见问题解决
-  * 1.3.3 预期实现成果展示
-- [项目实践：ESP32驱动小车转向](1_4_turn_around.md)
-  * 1.4.1 提示
-  * 1.4.2 预期实现成果
-## 预期学习成果
-- 能够依照实例编写出相关控制小车运动的函数
-- 小车能够实现前进、后退、转向、刹车、休眠等多种运动效果
+## Mixly安装教程
+- 一、官网下载
+<br>https://mixly.cn/bnu-maker/mixl2.0rc
+<br>![Mixly下载1](../resource/img/Mixly1.jpg)
+<br>跳转百度网盘后，点击Mixly2.0文件夹，显示以下文件:
+<br>![Mixly下载2](../resource/img/Mixly2.png)
+<br>下载完之后，将文件解压，解压的目录不要有中文、空格等；安装目录不要太长，目录最好放到每个电脑盘的根目录。
+打开解压后的文件夹，请双击"一键更新.bat"文件，按照提示安装，在此不做详细描述。等安装完成，双击“Mixly.exe”打开Mixly软件，如下图：
+<br>![Mixly下载3](../resource/img/Mixly3.jpg)
+
+- 二、使用方法
+<br>打开界面后，找到并选择Arduino ESP32
+<br>![Mixly使用1](../resource/img/Mixly4.jpg)
+<br>之后关注界面右上角，打开导入窗口。点击右上角”设置“按钮，选择”管理库“。如下图：
+<br>![Mixly使用2](../resource/img/Mixly5.jpg)
+<br>https://emakefun.github.io/emakefun-docsify/#/zh-cn/esp32/maker_esp32/maker_esp32?id=mixly%e7%a4%ba%e4%be%8b%e7%a8%8b%e5%ba%8f
+<br>打开以上网址，任意下载一个你感兴趣的方面，回到Mixly打开并选择你刚下的文件，就会出现文件选择框，选择 mix 后缀的文件即可
+<br>![Mixly使用3](../resource/img/Mixly6.png)
+<br>![Mixly使用4](../resource/img/Mixly7.png)
+<br>![Mixly使用5](../resource/img/Mixly8.png)
+<br>上图以电机代码作为示例
+<br>连接板子,点击上传，传到板子上即可使用
