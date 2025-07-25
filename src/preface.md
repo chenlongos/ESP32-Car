@@ -46,6 +46,11 @@
 
 - [第十章：项目实践-通过语音交互实现分类存放](chapter10/chapter_10.md)
 
+- [第十一章：mixly下对ESP32控制的复现](chapter11/chapter_11.md)
+  * [mixly安装](chapter11/11_1_mixly_install.md)
+  * [mixly界面简单介绍](chapter11/11_2_mixly_intro.md)
+  * [mixly下代码的复现](chapter11/11_3_mixly_code.md)
+
 ## 项目简介
 
 本实践指南将带领您从零开始构建一个基于ESP32的智能网球捡拾小车系统。通过本项目的完整学习路径，您将掌握嵌入式开发、物联网通信、计算机视觉和智能控制等多项前沿技术。（编写中）

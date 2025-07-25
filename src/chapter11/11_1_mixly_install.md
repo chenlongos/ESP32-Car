@@ -1,6 +1,7 @@
 # Mixly安装与使用
 
 ## Mixly安装教程
+
 - 一、官网下载
 <br>https://mixly.cn/bnu-maker/mixl2.0rc
 <br>![Mixly下载1](../resource/img/Mixly1.jpg)
