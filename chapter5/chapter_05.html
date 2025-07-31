@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>第五章：项目实践-边缘智能目标检测 - ESP32小车开发指导书</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../preface.html">前言</a></li><li class="chapter-item expanded "><a href="../chapter0/chapter_00.html">序章：环境配置与预备知识</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter0/0_1_hardware_intro.html">硬件平台介绍</a></li><li class="chapter-item expanded "><a href="../chapter0/0_2_dev_env.html">开发环境准备</a></li><li class="chapter-item expanded "><a href="../chapter0/0_3_prerequisites.html">前置知识引导</a></li></ol></li><li class="chapter-item expanded "><a href="../chapter1/chapter_01.html">第一章：ESP32小车基本控制</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter1/1_1_hardware_intro.html">硬件介绍</a></li><li class="chapter-item expanded "><a href="../chapter1/1_2_io_control.html">ESP32使用I/O接口</a></li><li class="chapter-item expanded "><a href="../chapter1/1_3_motor_control.html">ESP32驱动轮子</a></li><li class="chapter-item expanded "><a href="../chapter1/1_4_turn_around.html">项目实践：ESP32驱动小车转向</a></li></ol></li><li class="chapter-item expanded "><a href="../chapter2/chapter_02.html">第二章：ESP32小车远程控制</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter2/2_1_wifi_control.html">ESP32使能WiFi</a></li><li class="chapter-item expanded "><a href="../chapter2/2_2_establish_server.html">ESP32搭建网络服务</a></li><li class="chapter-item expanded "><a href="../chapter2/2_3_web_control_car_advance.html">网页遥控小车前进</a></li><li class="chapter-item expanded "><a href="../chapter2/2_4_web_control_car.html">项目实践：网页控制小车</a></li></ol></li><li class="chapter-item expanded "><a href="../chapter3/chapter_03.html">第三章：ESP32机械抓手基本控制</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter3/3_1_pwm_control.html">ESP32使用PWM</a></li><li class="chapter-item expanded "><a href="../chapter3/3_2_servo_control.html">ESP32驱动舵机</a></li><li class="chapter-item expanded "><a href="../chapter3/3_3_catch_tennis.html">项目实践：ESP32抓取网球</a></li></ol></li><li class="chapter-item expanded "><a href="../chapter4/chapter_04.html">第四章：YOLO模型训练及识别</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter4/4_1_tennis_detect.html">网球识别</a></li><li class="chapter-item expanded "><a href="../chapter4/4_2_car_detect.html">ESP32小车识别</a></li><li class="chapter-item expanded "><a href="../chapter4/4_3_tennis_and_car_position_detect.html">项目实践：网球和ESP32小车位置识别</a></li></ol></li><li class="chapter-item expanded "><a href="../chapter5/chapter_05.html" class="active">第五章：项目实践-边缘智能目标检测</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter5/5_1_yolo_result_to_car_cmd.html">里程碑1：根据YOLO结果返回控制小车指令</a></li><li class="chapter-item expanded "><a href="../chapter5/5_2_car_cmd_turn_to_tennis.html">里程碑2：根据小车指令转向瞄准网球</a></li><li class="chapter-item expanded "><a href="../chapter5/5_3_car_cmd_move_to_tennis.html">里程碑3：根据小车指令靠近网球</a></li><li class="chapter-item expanded "><a href="../chapter5/5_4_car_cmd_catch_tennis.html">里程碑4：根据小车指令抓取网球</a></li></ol></li><li class="chapter-item expanded "><a href="../chapter6/chapter_06.html">第六章：项目实践-使用Rust库开发ESP32小车</a></li><li class="chapter-item expanded "><a href="../chapter7/chapter_07.html">第七章：项目实践-移植ArceOS Unikernel驱动小车</a></li><li class="chapter-item expanded "><a href="../chapter8/chapter_08.html">第八章：项目实践-基于视觉大模型捡网球</a></li><li class="chapter-item expanded "><a href="../chapter9/chapter_09.html">第九章：项目实践-通过语音交互实现捡万物</a></li><li class="chapter-item expanded "><a href="../chapter10/chapter_10.html">第十章：项目实践-通过语音交互实现分类存放</a></li><li class="chapter-item expanded "><a href="../chapter11/chapter_11.html">第十一章：mixly下对ESP32控制的复现</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter11/11_1_mixly_install.html">mixly安装</a></li><li class="chapter-item expanded "><a href="../chapter11/11_2_mixly_intro.html">mixly界面简单介绍</a></li><li class="chapter-item expanded "><a href="../chapter11/11_3_mixly_code.html">mixly下代码的复现</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">ESP32小车开发指导书</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="第五章项目实践-边缘智能目标检测"><a class="header" href="#第五章项目实践-边缘智能目标检测">第五章：项目实践-边缘智能目标检测</a></h1>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../chapter4/4_3_tennis_and_car_position_detect.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../chapter5/5_1_yolo_result_to_car_cmd.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../chapter4/4_3_tennis_and_car_position_detect.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../chapter5/5_1_yolo_result_to_car_cmd.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
